@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Catamaran:wght@300&family=Montserrat:wght@200&family=Teko:wght@300&display=swap'); /* Arimo, Catmarran, Teko, Montserrat w/ sans-serif default */
+:root {
+  --color1: #3B3B3B;
+  --color2: #050206;
+  --color3: #9A8174;
+  --color4: #d0cdcd;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color2);
+}
+
+
+header {
+  margin: 0;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+logo {
+  font-family: 'Teko';
+  font-size: 20pt;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  background: var(--color3);
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+logo :hover {
+  transition: ease-in 0.2s;
+  color: var(--color1);
+} 
+
+li :hover {
+  transition: ease-in 0.2s;
+  color: var(--color2);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color4)
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color3);
+}
+
+h2 {
+  color: var(--color4);
+  font-family: 'Teko', sans-serif;
+  font-size: 25pt
+}
+
+.subtext {
+  width: 50%;
+  color: var(--color4);
+}
+
+.rectangle {
+  position: relative;
+  width: 480px;
+  height: 140px;
+  margin: auto; 
+  z-index: -1;  
+  border: 2px solid var(--color3);
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.picture-container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.picture-container2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.picture-container3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.all-picture-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,9 +1,9 @@
- @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Catamaran:wght@300&family=Montserrat:wght@200&family=Teko:wght@300&display=swap'); /* Arimo, Catmarran, Teko, Montserrat w/ sans-serif default */
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Catamaran:wght@300&family=Montserrat:wght@200&family=Teko:wght@300&display=swap'); /* Arimo, Catmarran, Teko, Montserrat w/ sans-serif default */
 :root {
   --color1: #3B3B3B;
   --color2: #050206;
   --color3: #9A8174;
-  --color4: #d0cdcd;
+  --color4: #FFFFFF;
 
 }
 * {
@@ -53,25 +53,22 @@ logo :hover {
 
 a {
   text-decoration: none;
-  color: var(--color4);
-}
-
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color3);
-}
-
-#TableSource {
-  color: var(--color4);
-  border: 2px solid var(--color4);
-}
-
-#TableSource thead {
   color: var(--color4)
 }
 
-td {
-  border-left: 1px solid var(--color4);
-  border-top: 1px solid var(--color4);
+h1 {
+  font-family: 'Arimo', sans-serif;
+  color: var(--color4);
 }
 
+h2 {
+  color: var(--color4);
+  font-family: 'Teko', sans-serif;
+  font-size: 25pt
+}
+
+section {
+  width: 40%;
+  color: var(--color4);
+  font-family: 'Montserrat', sans-serif;
+}

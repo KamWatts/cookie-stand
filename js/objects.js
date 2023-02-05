@@ -1,5 +1,3 @@
-/** @format */
-
 "use strict";
 
 let eachHour = [
@@ -186,11 +184,8 @@ tableFooter();
     console.log(theStores[j].cookiesSoldEachHour);
  }
 } 
-
 //for (let i = 0; i < cookiesSoldEachHour; i++) {}
-
 // Create Prototype method to add methods to all instances of theStores
-
 /* theStores.prototype.sellTheCookies = function() {
   let totalAmountofCookies = 0;
   let randomNumber = 0;
