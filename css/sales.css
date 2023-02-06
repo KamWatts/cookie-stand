@@ -12,6 +12,7 @@
 
 body {
   background: var(--color2);
+  color: white;
 }
 
 
@@ -73,5 +74,9 @@ h1 {
 td {
   border-left: 1px solid var(--color4);
   border-top: 1px solid var(--color4);
+}
+
+form {
+  width: 200px;
 }
 
