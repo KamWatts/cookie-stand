@@ -1,6 +1,10 @@
+
 # Cookie Stand
 
-This project consists of using JavaScript Objects and DOM manipulation. The purpose is to help a cookie stand determine the average amount of sales per day they have given a certain volume of customers they receive on any given day.
+
+This project consists of using JavaScript Objects and DOM manipulation. The purpose is to help a cookie stand business determine the average amount of sales they have per day given a certain volume of customers they receive on any given day.
+
+
 
 Primary languages for this project are HTML and JavaScript and some CSS.
 
