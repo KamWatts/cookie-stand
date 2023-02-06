@@ -17,9 +17,9 @@ let eachHour = [
   "7pm ",
 ];
 
-// Window into the DOM
+
 let tableSource = document.getElementById("TableSource");
-//console.log(tableHead);
+
 
 let locationBody = document.querySelector("tbody");
 console.log(locationBody);
@@ -30,7 +30,7 @@ console.log(locationHead);
 let locationFoot = document.querySelector("tfoot");
 console.log(locationFoot);
 
-// Constructor Function
+
 function CookieStore(name, min, max, averageSale) {
   this.name = name;
   this.min = min;
@@ -39,12 +39,12 @@ function CookieStore(name, min, max, averageSale) {
   this.cookiesSoldEachHour = [];
   this.totalSale = 0;
 
-  // Calculates cookies sold per HOUR
+ 
   this.cookiesSold = function () {
     let x = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
     return Math.floor(x * this.averageSale);
   };
-  // Loops through each hour of operation
+  
   this.anyGivenHour = function () {
     for (let i = 0; i < eachHour.length; i++) {
       let cookiesPerHour = this.cookiesSold();
@@ -62,7 +62,7 @@ function CookieStore(name, min, max, averageSale) {
     return total;
   };
 
-  // Renders tr and td onto the DOM
+  
   this.render = function () {
     let cookieTable = document.createElement("tr");
     let cookieData = document.createElement("td");
@@ -99,31 +99,28 @@ let paris = new CookieStore("paris", 20, 38, 4.6);
 
 let theStores = [seattle, tokyo, dubai, lima, paris];
 
-//render all the stores in a loop to calculate all of the cookies sold at each location
+
 function renderAllStores() {
   for (let i = 0; i < theStores.length; i++) {
     theStores[i].anyGivenHour();
-    // loops through each store and the amount of cookies sold at each.
+    
     theStores[i].render();
   }
 }
 renderAllStores();
 
-//create a TableHeader function
-// Table Header should include the city names
-//create a tr element
-// append row1 to the created tr element
+
 
 function tableHeader() {
-  // 1. Create Element
+ 
   let row1 = document.createElement("tr");
   locationHead.appendChild(row1);
 
-  // 2. Give it content
+  
   let locationHeader = document.createElement("th");
   locationHeader.innerText = "Locations";
 
-  // 3. Append it to the parent
+  
   row1.appendChild(locationHeader);
   for (let i = 0; i < eachHour.length; i++) {
     let thElem = document.createElement("th");
@@ -134,30 +131,28 @@ function tableHeader() {
   totals.textContent = "Totals";
   row1.appendChild(totals);
 }
-// 4. Call the function
+
 tableHeader();
 
-// create a TableFooter function
-
 function tableFooter() {
-  // 1. Create Element
+ 
   let theFooter = document.createElement("tr");
-  // 2. Give it content
+  
   theFooter.innerText = "Hourly Totals";
   theFooter.id = "tableFooter";
-  // 3. Append it to the parent
+  
   locationFoot.appendChild(theFooter);
 
-  // let dailyStoreTotals = 0;
+  
   let dailyGrandTotal = 0;
 
-  // This loop calculates the grand total for each store
+  
   for (let i = 0; i < theStores.length; i++) {
     for (let j = 0; j < theStores[i].cookiesSoldEachHour.length; j++) {
       dailyGrandTotal += theStores[i].cookiesSoldEachHour[j];
     }
   }
-  // console.log(dailyGrandTotal);
+  
 
   let hourlyTotalForEachStore = Array(14).fill(0);
 
@@ -179,25 +174,28 @@ function tableFooter() {
 }
 tableFooter();
 
-/* for (let i = 0; i < eachHour.length; i++) {
-  for (let j = 0; j < theStores.length; j++) {
-    console.log(theStores[j].cookiesSoldEachHour);
- }
-} 
-//for (let i = 0; i < cookiesSoldEachHour; i++) {}
-// Create Prototype method to add methods to all instances of theStores
-/* theStores.prototype.sellTheCookies = function() {
-  let totalAmountofCookies = 0;
-  let randomNumber = 0;
-  for (let i = 0; i < eachHour.length; i++) {
-    randomNumber = Math.floor(randomNumber(this.min, this.max));
-  }
+let storeForm = document.querySelector('form');
+
+
+
+let handleSubmit = function(event) {
+  
+  event.preventDefault();
+
+  
+  let newLocation = event.target.storeName.value;
+  let newMin = event.target.theMin.value;
+  let newMax = event.target.theMax.value;
+  let newAverage = event.target.aveSales.value;
+
+  let createNewShop = new CookieStore(newLocation, newMin, newMax, newAverage);
+
+  theStores.push(createNewShop);
+  createNewShop.anyGivenDay();
+  createNewShop.anyGivenHour();
+  createNewShop.render();
+  document.getElementById('tableFooter').remove();
+  tableFooter();
 }
-*/
 
-// create a grandTotal function
-// inside that function create a for loop that increments through anyGivenHour for each city
-// the for loop should increment the this.totalSale object
-// adds the totalSale value for each city
-
-//New store using constructor function called with `new` keyword.
+storeForm.addEventListener('submit', handleSubmit);

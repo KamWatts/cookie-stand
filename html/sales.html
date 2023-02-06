@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="/css/sales.css">
-  <title>Document</title>
+  <title>Pat's Salmon Cookies</title>
 </head>
 <header>
   <ul class="nav-container">
@@ -18,6 +19,7 @@
     <li><a href="sales.html">Sales</a></li>
   </ul>
 </header>
+
 <body>
 
   <h1>Worldwide PSC Sales Statistics</h1>
@@ -27,13 +29,34 @@
   <table id="TableSource">
     <thead></thead>
     <tbody>
-    
 
-  </tbody>
-  <tfoot id="tableFoot"></tfoot>
+
+    </tbody>
+    <tfoot id="tableFoot"></tfoot>
   </table>
-<footer></footer>
-<!-- <script src="js/objects.js"></script> -->
-<script src="/js/objects.js"></script>
+  <aside>
+    <form id="storeForm">
+      
+      <fieldset>
+        <legend>Add your own store</legend>
+        <label for="storeName">Store Name</label>
+        <input type="text" placeholder="ex. John Doe" id="storeName">
+
+        <label for="theMin">Min. Customers</label>
+        <input type="number" placeholder="ex. 10" id="theMin">
+
+        <label for="theMax">Max. Customers</label>
+        <input type="number" placeholder="ex. 99" id="theMax">
+
+        <label for="aveSales">Average Sales</label>
+        <input type="number" placeholder="ex. 123" id="aveSales">
+      </fieldset>
+      <button type="submit">Add Store</button>
+    </form>
+  </aside>
+  <footer></footer>
+  
+  <script src="/js/objects.js"></script>
 </body>
+
 </html>
